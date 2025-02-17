@@ -1,0 +1,80 @@
+.header_section {
+    width: 100%;
+    float: left;
+    /* background-image: url(/images/banner-bg.png);
+     */
+    background-image: url(../../../public/images/banner-bg.png);
+
+    background-size: 100%;
+    background-repeat: no-repeat;
+    padding-top: 20px;
+}
+
+.header_bg {
+    background-color: #e7e7f6;
+}
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (min-width: 576px) {
+    .container {
+        max-width: 540px;
+    }
+}
+
+@media (min-width: 768px) {
+    .container {
+        max-width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        max-width: 960px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1140px;
+    }
+}
+
+.call_section {
+    float: left;
+}
+
+.call_section ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+.call_section li {
+    float: left;
+    font-size: 18px;
+    padding: 5px 15px;
+    color: #000;
+}
+
+.call_section li a {
+    color: #000;
+}
+
+.donate_bt {
+    width: 50px;
+    float: left;
+    font-size: 18px;
+    padding: 5px 0px;
+    color: #fff;
+    text-align: right;
+}
+
+.donate_bt a {
+    color: #fff;
+}
