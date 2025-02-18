@@ -1,12 +1,13 @@
 import React from "react";
-import "../../images";
+// import "../../images";
+import "./Footer.css"
 
 function Footer() {
   return (
     <>
-      <div classNameName="footer_section layout_padding">
+      <div className="footer_section layout_padding">
         <div className="container">
-          <div classNameName="subscribe_bt">
+          <div className="subscribe_bt">
             <a href="#">Subscribe</a>
           </div>
           <input
