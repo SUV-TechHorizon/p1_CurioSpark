@@ -169,7 +169,7 @@ h2 {
 
 /* Add these new styles */
 .main-content {
-  padding-top: 80px; /* Adjust based on your header height */
+  padding: 5px; /* Adjust based on your header height */
 }
 
 .section-wrapper {
@@ -192,7 +192,7 @@ h2 {
 
 /* Update existing section styles */
 section {
-  margin: 2rem 0;
+  margin: 0rem 0;
   padding: 2rem 0;
 }
 
@@ -232,7 +232,7 @@ section {
   width: 100%;
   height: 600px;
   overflow: hidden;
-  margin-bottom: 50px; /* Add margin to separate from the next section */
+  margin-bottom: 0px; /* Add margin to separate from the next section */
 }
 
 .section {
@@ -241,7 +241,7 @@ section {
 
 .courses-section {
   display: block;
-  padding: 525px 50px 0 0; /* Revert to the original padding */
+  padding: 10px 50px 0 0; /* Revert to the original padding */
 }
 
 .courses-grid {

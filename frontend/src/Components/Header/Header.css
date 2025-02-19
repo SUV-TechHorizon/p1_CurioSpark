@@ -1,6 +1,6 @@
 header {
   width: 100%;
-  position: fixed;
+  /* position: fixed; */
   top: 0;
   left: 0;
   z-index: 1000;
@@ -22,6 +22,7 @@ header {
 
 .slide {
   position: absolute;
+  margin-top: 66px;
   width: 100%;
   height: 100%;
   opacity: 0;
