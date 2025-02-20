@@ -30,7 +30,9 @@ const Navbar = ({ onSectionChange }) => {
   return (
     <nav className={`navbar ${isScrolled ? 'scrolled' : ''}`}>
       <div className="logo">
-        <h2>SUV-TechHorizon</h2>
+        <a href="#" onClick={() => handleNavClick('home')} className="no-underline">
+          <h2>SUV-TechHorizon</h2>
+        </a>
       </div>
 
       {/* Mobile Menu Button */}
@@ -67,4 +69,4 @@ const Navbar = ({ onSectionChange }) => {
   );
 };
 
-export default Navbar; 
+export default Navbar;

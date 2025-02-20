@@ -163,6 +163,10 @@
   bottom: 0;
 }
 
+.no-underline {
+  text-decoration: none;
+}
+
 @media (max-width: 1024px) {
   .nav-links {
     gap: 1.5rem;
@@ -228,4 +232,4 @@
   .navbar {
     padding: 0.8rem 3%;
   }
-} 
+}
