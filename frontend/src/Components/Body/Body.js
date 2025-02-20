@@ -4,6 +4,7 @@ import { faker } from '@faker-js/faker'; // npm install @faker-js/faker
 
 const Body = ({ activeSection }) => {
   const [testimonials, setTestimonials] = useState([]);
+  const [formSubmitted, setFormSubmitted] = useState(false);
 
   useEffect(() => {
     // Generate an array of testimonial objects with random names and images
@@ -16,6 +17,13 @@ const Body = ({ activeSection }) => {
     }));
     setTestimonials(generatedTestimonials);
   }, []);
+
+  const handleFormSubmit = (e) => {
+    e.preventDefault();
+    setFormSubmitted(true);
+    setTimeout(() => setFormSubmitted(false), 3000); // Reset form submission state after 3 seconds
+  };
+
   const renderSection = () => {
     switch (activeSection) {
       case 'home':
@@ -156,11 +164,12 @@ const Body = ({ activeSection }) => {
           <section className="contact-section">
             <h2>Contact Us</h2>
             <div className="contact-container">
-              <form className="contact-form">
+              <form className="contact-form" onSubmit={handleFormSubmit}>
                 <input type="text" placeholder="Your Name" required />
                 <input type="email" placeholder="Your Email" required />
                 <textarea placeholder="Your Message" required></textarea>
                 <button type="submit" className="btn">Send Message</button>
+                {formSubmitted && <p className="form-feedback">Thank you for your message!</p>}
               </form>
             </div>
           </section>
@@ -178,4 +187,4 @@ const Body = ({ activeSection }) => {
   );
 };
 
-export default Body; 
+export default Body;

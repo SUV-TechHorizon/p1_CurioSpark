@@ -57,4 +57,11 @@
   .subscribe-form {
     flex-direction: column;
   }
-} 
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}

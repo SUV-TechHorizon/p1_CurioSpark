@@ -271,4 +271,11 @@ section {
 
 .course-content {
   padding: 1.5rem;
-} 
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
