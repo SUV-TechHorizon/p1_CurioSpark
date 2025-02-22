@@ -5,12 +5,8 @@ exports.sendSubscriptionEmail = async (email) => {
     const transporter = nodemailer.createTransport({
         service: 'gmail',
         auth: {
-            type: 'OAuth2',
             user: process.env.EMAIL_USER,
-            clientId: process.env.CLIENT_ID,
-            clientSecret: process.env.CLIENT_SECRET,
-            refreshToken: process.env.REFRESH_TOKEN,
-            accessToken: process.env.ACCESS_TOKEN
+            pass: process.env.EMAIL_PASSWORD,
         }
     });
 
@@ -22,9 +18,11 @@ exports.sendSubscriptionEmail = async (email) => {
     };
 
     try {
-        await transporter.sendMail(mailOptions);
+        let emailRes = await transporter.sendMail(mailOptions);
         console.log(`Email sent to ${email}`);
+        return emailRes;
     } catch (error) {
+        // console.log(error)
         console.error('Error sending email:', error);
         throw error;
     }
