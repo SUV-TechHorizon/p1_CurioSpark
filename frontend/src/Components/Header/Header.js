@@ -26,7 +26,7 @@ const Header = ({ onSectionChange }) => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prevSlide) => 
+      setCurrentSlide((prevSlide) =>
         prevSlide === slides.length - 1 ? 0 : prevSlide + 1
       );
     }, 5000);
@@ -35,13 +35,13 @@ const Header = ({ onSectionChange }) => {
   }, [slides.length]);
 
   const nextSlide = useCallback(() => {
-    setCurrentSlide((prevSlide) => 
+    setCurrentSlide((prevSlide) =>
       prevSlide === slides.length - 1 ? 0 : prevSlide + 1
     );
   }, [slides.length]);
 
   const prevSlide = useCallback(() => {
-    setCurrentSlide((prevSlide) => 
+    setCurrentSlide((prevSlide) =>
       prevSlide === 0 ? slides.length - 1 : prevSlide - 1
     );
   }, [slides.length]);
@@ -62,7 +62,6 @@ const Header = ({ onSectionChange }) => {
 
   return (
     <header>
-      <Navbar onSectionChange={handleSectionChange} />
       {activeSection === 'home' && (
         <div className="carousel">
           {slides.map((slide, index) => (

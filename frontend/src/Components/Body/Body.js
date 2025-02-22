@@ -24,10 +24,12 @@ const Body = ({ activeSection }) => {
     setTimeout(() => setFormSubmitted(false), 3000); // Reset form submission state after 3 seconds
   };
 
+
   const renderSection = () => {
     switch (activeSection) {
       case 'home':
         return (
+          
           <div className="home-section">
             <section id="courses" className="courses-section">
               <h2>Our Courses</h2>
@@ -56,6 +58,9 @@ const Body = ({ activeSection }) => {
                     <button className="btn">Learn More</button>
                   </div>
                 </div>
+              </div>
+              <div className="courses-grid-2">
+                <button className="courses-grid-button">Show more</button>
               </div>
             </section>
 
@@ -148,14 +153,14 @@ const Body = ({ activeSection }) => {
           <section className="testimonials-section">
             <h2>What Our Students Say</h2>
             <div className="testimonials-grid">
-                {testimonials.map((testimonial, index) => (
-                  <div className="testimonial-card" key={index}>
-                    <img src={testimonial.imageUrl} alt={testimonial.name} />
-                    <p>{testimonial.testimonial}</p>
-                    <h4>{testimonial.name}</h4>
-                  </div>
-                ))}
-              </div>
+              {testimonials.map((testimonial, index) => (
+                <div className="testimonial-card" key={index}>
+                  <img src={testimonial.imageUrl} alt={testimonial.name} />
+                  <p>{testimonial.testimonial}</p>
+                  <h4>{testimonial.name}</h4>
+                </div>
+              ))}
+            </div>
           </section>
         );
 

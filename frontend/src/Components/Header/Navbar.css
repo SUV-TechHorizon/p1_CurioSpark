@@ -198,7 +198,7 @@
     flex-direction: column;
     padding: 5rem 2rem;
     transition: right 0.3s ease;
-    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
   }
 
   .nav-container.open {
@@ -215,9 +215,9 @@
     margin: 2rem 0 0 0;
     justify-content: center;
     padding: 1rem 0;
-    border-top: 1px solid rgba(0,0,0,0.1);
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
   }
-  
+
   .social-links img {
     width: 28px;
     height: 28px;

@@ -1,4 +1,5 @@
-body, html {
+body,
+html {
   height: 100%;
   /* overflow: auto;  */
 }
@@ -24,12 +25,30 @@ h2 {
   gap: 2rem;
 }
 
+.courses-grid-2 {
+  padding: 1rem;
+  text-align: center;
+
+}
+
+
+.courses-grid-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+}
+
 .course-card {
   display: block;
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -83,7 +102,7 @@ h2 {
   background: white;
   padding: 2rem;
   border-radius: 10px;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -119,6 +138,7 @@ h2 {
 }
 
 @media (max-width: 768px) {
+
   .courses-grid,
   .testimonials-grid {
     grid-template-columns: 1fr;
@@ -141,7 +161,7 @@ h2 {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -169,7 +189,8 @@ h2 {
 
 /* Add these new styles */
 .main-content {
-  padding: 5px; /* Adjust based on your header height */
+  padding: 5px;
+  /* Adjust based on your header height */
 }
 
 .section-wrapper {
@@ -209,13 +230,14 @@ section {
   padding: 3rem 0;
   background: white;
   border-radius: 10px;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .main-content {
-    padding-top: 60px; /* Adjust for mobile header height */
+    padding-top: 60px;
+    /* Adjust for mobile header height */
   }
 
   .section-wrapper {
@@ -228,20 +250,24 @@ section {
 }
 
 .carousel {
-  position: relative; /* Ensure it's not fixed */
+  position: relative;
+  /* Ensure it's not fixed */
   width: 100%;
   height: 600px;
   overflow: hidden;
-  margin-bottom: 0px; /* Add margin to separate from the next section */
+  margin-bottom: 0px;
+  /* Add margin to separate from the next section */
 }
 
 .section {
-  padding: 50px 0; /* Add padding to sections for spacing */
+  padding: 50px 0;
+  /* Add padding to sections for spacing */
 }
 
 .courses-section {
   display: block;
-  padding: 10px 50px 0 0; /* Revert to the original padding */
+  padding: 10px 50px 0 0;
+  /* Revert to the original padding */
 }
 
 .courses-grid {
@@ -255,7 +281,7 @@ section {
   background: white;
   border-radius: 10px;
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
