@@ -31,9 +31,10 @@ const Navbar = ({ onSectionChange }) => {
   return (
     <nav className="navbar">
       <div className="logo">
-        <Link to="/" onClick={() => handleNavClick('home')} className="no-underline" >
-          <h2>SUV-TechHorizon</h2>
+        <Link to="/" onClick={() => handleNavClick('home')} className="no-underline flex items-center">
+          <img src="/curiospark_logo.png" alt="curiospark_logo.png" className="image-logo" />
         </Link>
+
       </div>
       {/* Mobile Menu Button */}
       <button className="mobile-menu-btn" onClick={toggleMenu}>
