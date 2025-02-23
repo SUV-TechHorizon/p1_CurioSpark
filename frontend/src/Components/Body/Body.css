@@ -1,7 +1,9 @@
 body,
 html {
+  margin: 0;
+  padding: 0;
   height: 100%;
-  /* overflow: auto;  */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
 }
 
 main {
@@ -189,16 +191,19 @@ h2 {
 
 /* Add these new styles */
 .main-content {
-  padding: 5px;
-  /* Adjust based on your header height */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh; /* Ensure the main content takes full height */
+  box-sizing: border-box;
 }
 
 .section-wrapper {
-  min-height: calc(100vh - 500px);
+  flex: 1; /* Allow sections to grow and fill available space */
   display: flex;
   align-items: flex-start;
   justify-content: center;
   padding: 2rem 5%;
+  margin-bottom: 0; /* Ensure no extra space */
 }
 
 .single-section {
@@ -303,5 +308,12 @@ section {
   margin-top: 1rem;
   color: green;
   font-weight: bold;
+  text-align: center;
+}
+
+footer {
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #f8f9fa; /* Ensure it matches the rest of the page */
   text-align: center;
 }
