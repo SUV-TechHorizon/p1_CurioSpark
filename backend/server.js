@@ -1,5 +1,6 @@
 const express = require('express');
 const cors = require('cors');
+const serverless = require('serverless-http');
 require('dotenv').config();
 
 const app = express();
@@ -9,13 +10,16 @@ app.use(express.json());
 app.use(cors());
 
 const apiRoutes = require('./routes/api');
+const healthRoutes = require('./routes/health');
 
 app.use('/api', apiRoutes);
+app.use('/health', healthRoutes);
 
-app.get('/', (req, res) => {
-  res.send('API is running');
-});
+module.exports.handler = serverless(app);
 
-app.listen(port, () => {
-  console.log(`Server running on http://localhost:${port}`);
-});
+// For local development
+if (process.env.NODE_ENV !== 'production') {
+  app.listen(port, () => {
+    console.log(`Server is running on port ${port}`);
+  });
+}

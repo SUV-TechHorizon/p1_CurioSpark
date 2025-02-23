@@ -1,0 +1,28 @@
+service: curiospark-backend
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-south-1 # or your preferred region
+  environment:
+    EMAIL_USER: ${env:EMAIL_USER}
+    EMAIL_PASSWORD: ${env:EMAIL_PASSWORD}
+    SPREADSHEET_ID: ${env:SPREADSHEET_ID}
+    SHEET_NAME: ${env:SHEET_NAME}
+
+functions:
+  app:
+    handler: server.handler  
+    events:
+      - http:
+          path: /{proxy+}
+          method: ANY
+          cors: true
+
+plugins:
+  - serverless-offline 
+
+custom:
+  serverless-offline:
+    httpPort: 5001 
+    noStageUrl: true
