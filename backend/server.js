@@ -12,6 +12,10 @@ const apiRoutes = require('./routes/api');
 
 app.use('/api', apiRoutes);
 
+app.get('/', (req, res) => {
+  res.send('API is running');
+});
+
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`);
 });

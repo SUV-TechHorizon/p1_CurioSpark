@@ -42,7 +42,14 @@ h2 {
   border-radius: 5px;
   cursor: pointer;
   transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
 
+.courses-grid-button:hover {
+  background: #2980b9;
+  text-decoration: none;
 }
 
 .course-card {

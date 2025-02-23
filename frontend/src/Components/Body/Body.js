@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Body.css';
 import { faker } from '@faker-js/faker'; // npm install @faker-js/faker
+import { Link } from 'react-router-dom';
 
 const Body = ({ activeSection }) => {
   const [testimonials, setTestimonials] = useState([]);
@@ -8,20 +9,44 @@ const Body = ({ activeSection }) => {
 
   useEffect(() => {
     // Generate an array of testimonial objects with random names and images
-    const generatedTestimonials = Array.from({ length: 3 }, (_, index) => ({
+    const generatedTestimonials = Array.from({ length: 5 }, (_, index) => ({
       name: faker.person.fullName(), //Generate random name using faker
       //You can use the index for different profile pictures.
       //Or use faker.image.avatar() for truly random images.
-      imageUrl: `https://i.pravatar.cc/100?img=${index + 3}`,
+      imageUrl: `https://i.pravatar.cc/100?img=${index + 5}`,
       testimonial: `The courses here transformed my career. I'm now working as a developer!`, //You can also make this dynamic.
     }));
     setTestimonials(generatedTestimonials);
   }, []);
 
-  const handleFormSubmit = (e) => {
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    setFormSubmitted(true);
-    setTimeout(() => setFormSubmitted(false), 3000); // Reset form submission state after 3 seconds
+    const formData = {
+      name: e.target.elements.name.value,
+      email: e.target.elements.email.value,
+      message: e.target.elements.message.value,
+    };
+
+    try {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/feedback`, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setFormSubmitted(true);
+        e.target.reset(); // Clear the form
+        setTimeout(() => setFormSubmitted(false), 3000);
+      } else {
+        throw new Error('Failed to send message');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again.');
+    }
   };
 
 
@@ -60,7 +85,9 @@ const Body = ({ activeSection }) => {
                 </div>
               </div>
               <div className="courses-grid-2">
-                <button className="courses-grid-button">Show more</button>
+                <Link to="/courses" className="courses-grid-button">
+                  Show more
+                </Link>
               </div>
             </section>
 
@@ -170,11 +197,27 @@ const Body = ({ activeSection }) => {
             <h2>Contact Us</h2>
             <div className="contact-container">
               <form className="contact-form" onSubmit={handleFormSubmit}>
-                <input type="text" placeholder="Your Name" required />
-                <input type="email" placeholder="Your Email" required />
-                <textarea placeholder="Your Message" required></textarea>
+                <input 
+                  type="text" 
+                  name="name"
+                  placeholder="Your Name" 
+                  required 
+                />
+                <input 
+                  type="email" 
+                  name="email"
+                  placeholder="Your Email" 
+                  required 
+                />
+                <textarea 
+                  name="message"
+                  placeholder="Your Message" 
+                  required
+                ></textarea>
                 <button type="submit" className="btn">Send Message</button>
-                {formSubmitted && <p className="form-feedback">Thank you for your message!</p>}
+                {formSubmitted && (
+                  <p className="form-feedback">Thank you for your message!</p>
+                )}
               </form>
             </div>
           </section>
