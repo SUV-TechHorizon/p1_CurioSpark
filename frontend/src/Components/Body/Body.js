@@ -54,7 +54,7 @@ const Body = ({ activeSection }) => {
     switch (activeSection) {
       case 'home':
         return (
-          
+
           <div className="home-section">
             <section id="courses" className="courses-section">
               <h2>Our Courses</h2>
@@ -154,10 +154,23 @@ const Body = ({ activeSection }) => {
             <section className="about-section single-section">
               <h2>About Us</h2>
               <div className="about-content">
-                <p>SUV-TechHorizon is dedicated to providing high-quality education in technology and computer science. Our mission is to make learning accessible, engaging, and effective for students worldwide.</p>
+                <p>
+                  Curiospark Technologies is a leading IT training and solutions provider,
+                  committed to delivering industry-relevant skills through practical, hands-on learning.
+                  Beyond traditional courses, we host webinars & seminars led by industry experts,
+                  providing professionals with insights into emerging technologies and market trends.
+                  Our interactive sessions ensure that learners stay ahead in the ever-evolving digital landscape.
+                </p>
+                <p>
+                  With expertise in Data Science, AI, Web Development, and more, we bridge the gap
+                  between theory and real-world application. Our engaging training programs, combined with
+                  expert-led discussions and networking opportunities, empower individuals and businesses
+                  to excel in today's competitive tech-driven world.
+                </p>
               </div>
             </section>
           </div>
+
         );
 
       case 'blog':
@@ -197,21 +210,21 @@ const Body = ({ activeSection }) => {
             <h2>Contact Us</h2>
             <div className="contact-container">
               <form className="contact-form" onSubmit={handleFormSubmit}>
-                <input 
-                  type="text" 
+                <input
+                  type="text"
                   name="name"
-                  placeholder="Your Name" 
-                  required 
+                  placeholder="Your Name"
+                  required
                 />
-                <input 
-                  type="email" 
+                <input
+                  type="email"
                   name="email"
-                  placeholder="Your Email" 
-                  required 
+                  placeholder="Your Email"
+                  required
                 />
-                <textarea 
+                <textarea
                   name="message"
-                  placeholder="Your Message" 
+                  placeholder="Your Message"
                   required
                 ></textarea>
                 <button type="submit" className="btn">Send Message</button>

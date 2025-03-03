@@ -9,8 +9,8 @@ const Header = ({ onSectionChange }) => {
   const slides = useMemo(() => [
     {
       image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3",
-      title: "Welcome to SUV-TechHorizon",
-      description: "Empowering Minds, Shaping Futures"
+      title: "Welcome to CurioSpark Technologies",
+      description: "Igniting Minds, Sparking Futures"
     },
     {
       image: "https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3",

@@ -32,7 +32,7 @@ const Navbar = ({ onSectionChange }) => {
     <nav className="navbar">
       <div className="logo">
         <Link to="/" onClick={() => handleNavClick('home')} className="no-underline flex items-center">
-          <img src="/curiospark_logo.png" alt="curiospark_logo.png" className="image-logo" />
+          <img src="/logo.png" alt="curiospark_logo.png" className="image-logo" />
         </Link>
 
       </div>
@@ -52,17 +52,17 @@ const Navbar = ({ onSectionChange }) => {
         </ul>
 
         <div className="social-links">
-          <Link to="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook">
+          <Link to="https://www.facebook.com/people/Curiospark-Technologies-Private-Limited/61572727858342/?rdid=ZWMpgLYkHqpNJbAb&share_url=https%253A%252F%252Fwww.facebook.com%252Fshare%252F18syKkZnT1%252F" target="_blank" rel="noopener noreferrer" title="Facebook">
             <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/PNG/Color/Facebook.png" alt="Facebook" />
           </Link>
-          <Link to="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
+          {/* <Link to="https://twitter.com" target="_blank" rel="noopener noreferrer" title="Twitter">
             <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/PNG/Color/Twitter.png" alt="Twitter" />
-          </Link>
-          <Link to="https://linkedin.com" target="_blank" rel="noopener noreferrer" title="LinkedIn">
+          </Link> */}
+          <Link to="https://www.linkedin.com/company/curiospark-technologies-private-limited/?viewAsMember=true" target="_blank" rel="noopener noreferrer" title="LinkedIn">
             <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/PNG/Color/LinkedIN.png" alt="LinkedIn" />
           </Link>
-          <Link to="https://instagram.com" target="_blank" rel="noopener noreferrer" title="Instagram">
-            <img src="https://raw.githubusercontent.com/gauravghongde/social-icons/master/PNG/Color/Instagram.png" alt="Instagram" />
+          <Link to="https://www.instagram.com/curiospark_technologies/#" target="_blank" rel="noopener noreferrer" title="Instagram">
+            <img src="https://img.icons8.com/?size=100&id=Xy10Jcu1L2Su&format=png&color=000000" alt="Instagram" />
           </Link>
         </div>
       </div>
