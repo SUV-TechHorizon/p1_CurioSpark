@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import "./Body.css";
-import { faker } from "@faker-js/faker"; // npm install @faker-js/faker
 import { Link } from "react-router-dom";
 import testimonials from '../JSON/Testimonial.json'
 
