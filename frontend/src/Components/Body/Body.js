@@ -1,23 +1,68 @@
-import React, { useState, useEffect } from 'react';
-import './Body.css';
-import { faker } from '@faker-js/faker'; // npm install @faker-js/faker
-import { Link } from 'react-router-dom';
+import React, { useState, useEffect } from "react";
+import "./Body.css";
+import { faker } from "@faker-js/faker"; // npm install @faker-js/faker
+import { Link } from "react-router-dom";
 
 const Body = ({ activeSection }) => {
-  const [testimonials, setTestimonials] = useState([]);
+  // const [testimonials, setTestimonials] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false);
 
-  useEffect(() => {
-    // Generate an array of testimonial objects with random names and images
-    const generatedTestimonials = Array.from({ length: 5 }, (_, index) => ({
-      name: faker.person.fullName(), //Generate random name using faker
-      //You can use the index for different profile pictures.
-      //Or use faker.image.avatar() for truly random images.
-      imageUrl: `https://i.pravatar.cc/100?img=${index + 5}`,
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`, //You can also make this dynamic.
-    }));
-    setTestimonials(generatedTestimonials);
-  }, []);
+  // useEffect(() => {
+  //   // Generate an array of testimonial objects with random names and images
+  //   const generatedTestimonials = Array.from({ length: 5 }, (_, index) => ({
+  //     name: faker.person.fullName(), //Generate random name using faker
+  //     //You can use the index for different profile pictures.
+  //     //Or use faker.image.avatar() for truly random images.
+  //     imageUrl: `https://i.pravatar.cc/100?img=${index + 5}`,
+  //     testimonial: `The courses here transformed my career. I'm now working as a developer!`, //You can also make this dynamic.
+  //   }));
+  //   setTestimonials(generatedTestimonials);
+  // }, []);
+
+  const testimonials = [
+    {
+      name: "Ujwala Kuralkar",
+      imageUrl: "https://i.pravatar.cc/100?img=1",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.instagram.com/curiospark_technologies/reel/DGnujzQNOef/",
+    },
+    {
+      name: "Vaibhav Dongre",
+      imageUrl: "https://i.pravatar.cc/100?img=3",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.instagram.com/reel/DG7eAIkNvMo/?igsh=MWp0eDRueXQydzl3Zw==",
+    },
+    {
+      name: "Suprit Paunikar",
+      imageUrl: "https://i.pravatar.cc/100?img=7",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
+    },
+    {
+      name: "Katrina Kaif",
+      imageUrl: "https://i.pravatar.cc/100?img=2",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
+    },
+    {
+      name: "Deepika Padukone",
+      imageUrl: "https://i.pravatar.cc/100?img=8",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
+    },
+    {
+      name: "Deepika Padukone",
+      imageUrl: "https://i.pravatar.cc/100?img=8",
+      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
+      video_url:
+        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
+    },
+  ];
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -28,55 +73,70 @@ const Body = ({ activeSection }) => {
     };
 
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/feedback`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        `${process.env.REACT_APP_API_URL}/api/feedback`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       if (response.ok) {
         setFormSubmitted(true);
         e.target.reset(); // Clear the form
         setTimeout(() => setFormSubmitted(false), 3000);
       } else {
-        throw new Error('Failed to send message');
+        throw new Error("Failed to send message");
       }
     } catch (error) {
-      console.error('Error:', error);
-      alert('Failed to send message. Please try again.');
+      console.error("Error:", error);
+      alert("Failed to send message. Please try again.");
     }
   };
 
-
   const renderSection = () => {
     switch (activeSection) {
-      case 'home':
+      case "home":
         return (
-
           <div className="home-section">
             <section id="courses" className="courses-section">
               <h2>Our Courses</h2>
               <div className="courses-grid">
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Web Development" />
+                  <img
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                    alt="Web Development"
+                  />
                   <div className="course-content">
                     <h3>Web Development</h3>
-                    <p>Learn modern web development with React, Node.js, and more.</p>
+                    <p>
+                      Learn modern web development with React, Node.js, and
+                      more.
+                    </p>
                     <button className="btn">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Data Science" />
+                  <img
+                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+                    alt="Data Science"
+                  />
                   <div className="course-content">
                     <h3>Data Science</h3>
-                    <p>Master data analysis, machine learning, and statistics.</p>
+                    <p>
+                      Master data analysis, machine learning, and statistics.
+                    </p>
                     <button className="btn">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="AI" />
+                  <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                    alt="AI"
+                  />
                   <div className="course-content">
                     <h3>Artificial Intelligence</h3>
                     <p>Explore AI, deep learning, and neural networks.</p>
@@ -94,7 +154,12 @@ const Body = ({ activeSection }) => {
             <section id="about" className="about-section">
               <h2>About Us</h2>
               <div className="about-content">
-                <p>SUV-TechHorizon is dedicated to providing high-quality education in technology and computer science. Our mission is to make learning accessible, engaging, and effective for students worldwide.</p>
+                <p>
+                  SUV-TechHorizon is dedicated to providing high-quality
+                  education in technology and computer science. Our mission is
+                  to make learning accessible, engaging, and effective for
+                  students worldwide.
+                </p>
               </div>
             </section>
 
@@ -113,30 +178,44 @@ const Body = ({ activeSection }) => {
           </div>
         );
 
-      case 'courses':
+      case "courses":
         return (
           <div className="section-wrapper">
             <section className="courses-section single-section">
               <h2>Our Courses</h2>
               <div className="courses-grid">
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Web Development" />
+                  <img
+                    src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                    alt="Web Development"
+                  />
                   <div className="course-content">
                     <h3>Web Development</h3>
-                    <p>Learn modern web development with React, Node.js, and more.</p>
+                    <p>
+                      Learn modern web development with React, Node.js, and
+                      more.
+                    </p>
                     <button className="btn">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c" alt="Data Science" />
+                  <img
+                    src="https://images.unsplash.com/photo-1555949963-aa79dcee981c"
+                    alt="Data Science"
+                  />
                   <div className="course-content">
                     <h3>Data Science</h3>
-                    <p>Master data analysis, machine learning, and statistics.</p>
+                    <p>
+                      Master data analysis, machine learning, and statistics.
+                    </p>
                     <button className="btn">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
-                  <img src="https://images.unsplash.com/photo-1551434678-e076c223a692" alt="AI" />
+                  <img
+                    src="https://images.unsplash.com/photo-1551434678-e076c223a692"
+                    alt="AI"
+                  />
                   <div className="course-content">
                     <h3>Artificial Intelligence</h3>
                     <p>Explore AI, deep learning, and neural networks.</p>
@@ -148,47 +227,56 @@ const Body = ({ activeSection }) => {
           </div>
         );
 
-      case 'about':
+      case "about":
         return (
           <div className="section-wrapper">
             <section className="about-section single-section">
               <h2>About Us</h2>
               <div className="about-content">
                 <p>
-                  Curiospark Technologies is a leading IT training and solutions provider,
-                  committed to delivering industry-relevant skills through practical, hands-on learning.
-                  Beyond traditional courses, we host webinars & seminars led by industry experts,
-                  providing professionals with insights into emerging technologies and market trends.
-                  Our interactive sessions ensure that learners stay ahead in the ever-evolving digital landscape.
+                  Curiospark Technologies is a leading IT training and solutions
+                  provider, committed to delivering industry-relevant skills
+                  through practical, hands-on learning. Beyond traditional
+                  courses, we host webinars & seminars led by industry experts,
+                  providing professionals with insights into emerging
+                  technologies and market trends. Our interactive sessions
+                  ensure that learners stay ahead in the ever-evolving digital
+                  landscape.
                 </p>
                 <p>
-                  With expertise in Data Science, AI, Web Development, and more, we bridge the gap
-                  between theory and real-world application. Our engaging training programs, combined with
-                  expert-led discussions and networking opportunities, empower individuals and businesses
-                  to excel in today's competitive tech-driven world.
+                  With expertise in Data Science, AI, Web Development, and more,
+                  we bridge the gap between theory and real-world application.
+                  Our engaging training programs, combined with expert-led
+                  discussions and networking opportunities, empower individuals
+                  and businesses to excel in today's competitive tech-driven
+                  world.
                 </p>
               </div>
             </section>
           </div>
-
         );
 
-      case 'blog':
+      case "blog":
         return (
           <section className="blog-section">
             <h2>Our Blog</h2>
             <div className="blog-grid">
               <div className="blog-post">
-                <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6" alt="Blog" />
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                  alt="Blog"
+                />
                 <h3>Latest Trends in Technology</h3>
-                <p>Explore the cutting-edge developments in tech education...</p>
+                <p>
+                  Explore the cutting-edge developments in tech education...
+                </p>
                 <button className="btn">Read More</button>
               </div>
             </div>
           </section>
         );
 
-      case 'testimonials':
+      case "testimonials":
         return (
           <section className="testimonials-section">
             <h2>What Our Students Say</h2>
@@ -198,13 +286,18 @@ const Body = ({ activeSection }) => {
                   <img src={testimonial.imageUrl} alt={testimonial.name} />
                   <p>{testimonial.testimonial}</p>
                   <h4>{testimonial.name}</h4>
+                  <Link to={testimonial.video_url} target="_blank">
+                    <button className="testimonial-watch_Video_btn">
+                      Watch Video
+                    </button>
+                  </Link>
                 </div>
               ))}
             </div>
           </section>
         );
 
-      case 'contact':
+      case "contact":
         return (
           <section className="contact-section">
             <h2>Contact Us</h2>
@@ -227,7 +320,9 @@ const Body = ({ activeSection }) => {
                   placeholder="Your Message"
                   required
                 ></textarea>
-                <button type="submit" className="btn">Send Message</button>
+                <button type="submit" className="btn">
+                  Send Message
+                </button>
                 {formSubmitted && (
                   <p className="form-feedback">Thank you for your message!</p>
                 )}
@@ -242,7 +337,11 @@ const Body = ({ activeSection }) => {
   };
 
   return (
-    <main className={`main-content ${activeSection !== 'home' ? 'single-section-view' : ''}`}>
+    <main
+      className={`main-content ${
+        activeSection !== "home" ? "single-section-view" : ""
+      }`}
+    >
       {renderSection()}
     </main>
   );

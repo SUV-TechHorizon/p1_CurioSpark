@@ -123,6 +123,20 @@ h2 {
   object-fit: cover;
 }
 
+.testimonial-watch_Video_btn{
+  background-color: #c35157; /* Button background color */
+  color: white; /* Text color */
+  font-size: small; /* Font size */
+  padding: 10px 20px; /* Padding around the text */
+  border-radius: 8px; /* Rounded corners */
+  border: none; /* No border */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out; /* Smooth transition for hover effects */
+  font-family: Arial, sans-serif; /* Font style */
+  text-transform: uppercase; /* Uppercase text */;
+  
+}
+
 .contact-container {
   max-width: 600px;
   margin: 0 auto;
