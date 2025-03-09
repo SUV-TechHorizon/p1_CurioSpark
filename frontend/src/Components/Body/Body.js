@@ -2,67 +2,10 @@ import React, { useState, useEffect } from "react";
 import "./Body.css";
 import { faker } from "@faker-js/faker"; // npm install @faker-js/faker
 import { Link } from "react-router-dom";
+import testimonials from '../JSON/Testimonial.json'
 
 const Body = ({ activeSection }) => {
-  // const [testimonials, setTestimonials] = useState([]);
   const [formSubmitted, setFormSubmitted] = useState(false);
-
-  // useEffect(() => {
-  //   // Generate an array of testimonial objects with random names and images
-  //   const generatedTestimonials = Array.from({ length: 5 }, (_, index) => ({
-  //     name: faker.person.fullName(), //Generate random name using faker
-  //     //You can use the index for different profile pictures.
-  //     //Or use faker.image.avatar() for truly random images.
-  //     imageUrl: `https://i.pravatar.cc/100?img=${index + 5}`,
-  //     testimonial: `The courses here transformed my career. I'm now working as a developer!`, //You can also make this dynamic.
-  //   }));
-  //   setTestimonials(generatedTestimonials);
-  // }, []);
-
-  const testimonials = [
-    {
-      name: "Ujwala Kuralkar",
-      imageUrl: "https://i.pravatar.cc/100?img=1",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.instagram.com/curiospark_technologies/reel/DGnujzQNOef/",
-    },
-    {
-      name: "Vaibhav Dongre",
-      imageUrl: "https://i.pravatar.cc/100?img=3",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.instagram.com/reel/DG7eAIkNvMo/?igsh=MWp0eDRueXQydzl3Zw==",
-    },
-    {
-      name: "Suprit Paunikar",
-      imageUrl: "https://i.pravatar.cc/100?img=7",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
-    },
-    {
-      name: "Katrina Kaif",
-      imageUrl: "https://i.pravatar.cc/100?img=2",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
-    },
-    {
-      name: "Deepika Padukone",
-      imageUrl: "https://i.pravatar.cc/100?img=8",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
-    },
-    {
-      name: "Deepika Padukone",
-      imageUrl: "https://i.pravatar.cc/100?img=8",
-      testimonial: `The courses here transformed my career. I'm now working as a developer!`,
-      video_url:
-        "https://www.youtube.com/watch?v=0sEhH6QlW7o&list=PLKuqnzE0syt3QJCywyZVxgJ2i3NY5RjRj",
-    },
-  ];
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
