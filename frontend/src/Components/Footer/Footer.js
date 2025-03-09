@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Footer.css';
 
-const Footer = () => {
+const Footer = ({emailid,phoneNumber, address}) => {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState('');
 
@@ -31,9 +31,9 @@ const Footer = () => {
       <div className="footer-content">
         <div className="footer-section">
           <h3>Contact Info</h3>
-          <p>Email: suvtechhorizon.innovate@gmail.com</p>
-          <p>Phone: +91 9978572120</p>
-          <p>Address: 123 Tech Street, Nagpur, Maharashtra, India</p>
+          <p>Email: {emailid}</p>
+          <p>Phone: {phoneNumber}</p>
+          <p>Address: {address}</p>
         </div>
         <div className="footer-section">
           <h3>Subscribe to Newsletter</h3>

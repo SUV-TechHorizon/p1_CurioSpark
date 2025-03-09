@@ -23,7 +23,7 @@ function App() {
         <Route path="/contact" element={<Body activeSection='contact' />}></Route>
         <Route path="/courses/content" element={<Courses />}></Route>
       </Routes>
-      <Footer />
+      <Footer emailid='suvtechhorizon.innovate@gmail.com' phoneNumber='+91 9978572120' address='123 Tech Street, Nagpur, Maharashtra, India'/>
     </>
   );
 }
