@@ -1,10 +1,30 @@
 import React, { useState, useEffect } from "react";
 import "./Body.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import testimonials from '../JSON/Testimonial.json'
+import { Button } from "@mui/material";
+import CourseModal from "../Modal/CourseModal";
+import AboutUs from "../pages/AboutUs";
+import KeyboardDoubleArrowDownIcon from '@mui/icons-material/KeyboardDoubleArrowDown';
+
+import { IconButton } from "@mui/material";
+
 
 const Body = ({ activeSection }) => {
   const [formSubmitted, setFormSubmitted] = useState(false);
+  const [open, setOpen] = useState(false);
+  const [course, setCourse] = useState("");
+
+  const navigate = useNavigate(); // Hook to navigate between routes
+
+  const handleRedirect = () => {
+    navigate("/about"); // Change "/target-page" to your desired route
+  };
+
+  const handleOpen = (course) => {
+    setCourse(course); // Store which course was clicked
+    setOpen(true); // Open modal
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -39,6 +59,8 @@ const Body = ({ activeSection }) => {
     }
   };
 
+
+
   const renderSection = () => {
     switch (activeSection) {
       case "home":
@@ -58,7 +80,7 @@ const Body = ({ activeSection }) => {
                       Learn modern web development with React, Node.js, and
                       more.
                     </p>
-                    <button className="btn">Learn More</button>
+                    <button className="btn btn-primary">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
@@ -71,7 +93,7 @@ const Body = ({ activeSection }) => {
                     <p>
                       Master data analysis, machine learning, and statistics.
                     </p>
-                    <button className="btn">Learn More</button>
+                    <button className="btn btn-primary">Learn More</button>
                   </div>
                 </div>
                 <div className="course-card">
@@ -82,7 +104,7 @@ const Body = ({ activeSection }) => {
                   <div className="course-content">
                     <h3>Artificial Intelligence</h3>
                     <p>Explore AI, deep learning, and neural networks.</p>
-                    <button className="btn">Learn More</button>
+                    <button className="btn btn-primary">Learn More</button>
                   </div>
                 </div>
               </div>
@@ -97,11 +119,14 @@ const Body = ({ activeSection }) => {
               <h2>About Us</h2>
               <div className="about-content">
                 <p>
-                  SUV-TechHorizon is dedicated to providing high-quality
-                  education in technology and computer science. Our mission is
-                  to make learning accessible, engaging, and effective for
-                  students worldwide.
+                  Curiospark Technologies is a leading IT training and solutions provider, committed to delivering
+                  industry-relevant skills through practical, hands-on learning. Beyond traditional courses, we host webinars &
+                  seminars led by industry experts, providing professionals with insights into emerging technologies and
+                  market trends. Our interactive sessions ensure that learners stay ahead in the ever-evolving digital landscape.
                 </p>
+                <IconButton onClick={handleRedirect} sx={{ color: "#d4a373", mt: 1 }}>
+                  <KeyboardDoubleArrowDownIcon sx={{ fontSize: 50 }} />
+                </IconButton>
               </div>
             </section>
 
@@ -137,7 +162,11 @@ const Body = ({ activeSection }) => {
                       Learn modern web development with React, Node.js, and
                       more.
                     </p>
-                    <button className="btn">Learn More</button>
+                    {/* <button className="btn">Learn More</button> */}
+                    <Button variant="contained" color="primary" onClick={() => handleOpen("mern")}>
+                      Learn More
+                    </Button>
+
                   </div>
                 </div>
                 <div className="course-card">
@@ -150,7 +179,9 @@ const Body = ({ activeSection }) => {
                     <p>
                       Master data analysis, machine learning, and statistics.
                     </p>
-                    <button className="btn">Learn More</button>
+                    <Button variant="contained" color="primary" onClick={() => handleOpen("ds")}>
+                      Learn More
+                    </Button>
                   </div>
                 </div>
                 <div className="course-card">
@@ -161,47 +192,40 @@ const Body = ({ activeSection }) => {
                   <div className="course-content">
                     <h3>Artificial Intelligence</h3>
                     <p>Explore AI, deep learning, and neural networks.</p>
-                    <button className="btn">Learn More</button>
+                    <Button variant="contained" color="primary" onClick={() => handleOpen("AI")}>
+                      Learn More
+                    </Button>
                   </div>
                 </div>
               </div>
+              {/* Render Modal and Pass Props */}
+              <CourseModal open={open} onClose={() => setOpen(false)} course={course} />
             </section>
           </div>
         );
 
       case "about":
         return (
-          <div className="section-wrapper">
-            <section className="about-section single-section">
-              <h2>About Us</h2>
-              <div className="about-content">
-                <p>
-                  Curiospark Technologies is a leading IT training and solutions
-                  provider, committed to delivering industry-relevant skills
-                  through practical, hands-on learning. Beyond traditional
-                  courses, we host webinars & seminars led by industry experts,
-                  providing professionals with insights into emerging
-                  technologies and market trends. Our interactive sessions
-                  ensure that learners stay ahead in the ever-evolving digital
-                  landscape.
-                </p>
-                <p>
-                  With expertise in Data Science, AI, Web Development, and more,
-                  we bridge the gap between theory and real-world application.
-                  Our engaging training programs, combined with expert-led
-                  discussions and networking opportunities, empower individuals
-                  and businesses to excel in today's competitive tech-driven
-                  world.
-                </p>
-              </div>
-            </section>
-          </div>
+          <AboutUs />
         );
 
       case "blog":
         return (
           <section className="blog-section">
             <h2>Our Blog</h2>
+            <div className="blog-grid">
+              <div className="blog-post">
+                <img
+                  src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6"
+                  alt="Blog"
+                />
+                <h3>Latest Trends in Technology</h3>
+                <p>
+                  Explore the cutting-edge developments in tech education...
+                </p>
+                <button className="btn">Read More</button>
+              </div>
+            </div>
             <div className="blog-grid">
               <div className="blog-post">
                 <img
@@ -229,9 +253,25 @@ const Body = ({ activeSection }) => {
                   <p>{testimonial.testimonial}</p>
                   <h4>{testimonial.name}</h4>
                   <Link to={testimonial.video_url} target="_blank">
-                    <button className="testimonial-watch_Video_btn">
+                    {/* <button className="testimonial-watch_Video_btn">
                       Watch Video
+                    </button> */}
+                    <button class="button-with-icon">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 48 48"
+                        id="Play"
+                        class="icon"
+                      >
+                        <path
+                          d="M12 39c-.549 0-1.095-.15-1.578-.447A3.008 3.008 0 0 1 9 36V12c0-1.041.54-2.007 1.422-2.553a3.014 3.014 0 0 1 2.919-.132l24 12a3.003 3.003 0 0 1 0 5.37l-24 12c-.42.21-.885.315-1.341.315z"
+                          fill="#ffffff"
+                          class="color000000 svgShape"
+                        ></path>
+                      </svg>
+                      <span class="text">Video</span>
                     </button>
+
                   </Link>
                 </div>
               ))}
@@ -280,9 +320,8 @@ const Body = ({ activeSection }) => {
 
   return (
     <main
-      className={`main-content ${
-        activeSection !== "home" ? "single-section-view" : ""
-      }`}
+      className={`main-content ${activeSection !== "home" ? "single-section-view" : ""
+        }`}
     >
       {renderSection()}
     </main>

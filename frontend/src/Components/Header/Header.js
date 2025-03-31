@@ -8,7 +8,8 @@ const Header = ({ onSectionChange }) => {
 
   const slides = useMemo(() => [
     {
-      image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3",
+      // image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?ixlib=rb-4.0.3",
+      image: "./CT_building4.jpeg",
       title: "Welcome to CurioSpark Technologies",
       description: "Igniting Minds, Sparking Futures"
     },
@@ -71,9 +72,9 @@ const Header = ({ onSectionChange }) => {
               style={{ backgroundImage: `url(${slide.image})` }}
             >
               <div className="slide-content">
-                <h2>{slide.title}</h2>
+                <h2 style={{ color: "rgb(207 171 93)" }}>{slide.title}</h2>
                 <p>{slide.description}</p>
-                <button className="cta-button">Get Started</button>
+                {/* <button className="cta-button">Get Started</button> */}
               </div>
             </div>
           ))}

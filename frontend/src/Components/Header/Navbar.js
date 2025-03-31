@@ -45,7 +45,7 @@ const Navbar = ({ onSectionChange }) => {
         <ul className="nav-links">
           <li><Link to="/" onClick={() => handleNavClick('home')}>Home</Link></li>
           <li><Link to="/courses" onClick={() => handleNavClick('courses')}>Courses</Link></li>
-          <li><Link to="/about" onClick={() => handleNavClick('about')}>About</Link></li>
+          <li><Link to="/about" onClick={() => handleNavClick('about')}>About Us</Link></li>
           <li><Link to="/blog" onClick={() => handleNavClick('blog')}>Blog</Link></li>
           <li><Link to="/testimonials" onClick={() => handleNavClick('testimonials')}>Testimonials</Link></li>
           <li><Link to="/contact" onClick={() => handleNavClick('contact')}>Contact</Link></li>

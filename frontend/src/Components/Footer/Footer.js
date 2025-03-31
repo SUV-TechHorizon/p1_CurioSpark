@@ -1,9 +1,13 @@
 import React, { useState } from 'react';
 import './Footer.css';
 
-const Footer = ({emailid,phoneNumber, address}) => {
+const Footer = () => {
   const [subscribed, setSubscribed] = useState(false);
   const [email, setEmail] = useState('');
+
+  let emailid = "suvtechhorizon.innovate@gmail.com";
+  let phoneNumber = '+91 98600 00787 | +91 93072 64451';
+  let address = 'Plot No: 34, 2nd Floor, Dattatray Nagar, Beside Axis Bank, Nagpur';
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -51,7 +55,7 @@ const Footer = ({emailid,phoneNumber, address}) => {
         </div>
       </div>
       <div className="footer-bottom">
-        <p>&copy; 2024 SUV-TechHorizon. All rights reserved.</p>
+        <p>&copy; 2025 CurioSpark Technologies. All rights reserved.</p>
       </div>
     </footer>
   );

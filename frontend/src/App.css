@@ -1,12 +1,15 @@
-body, html {
+body,
+html {
   margin: 0;
   padding: 0;
   height: 100%;
-  overflow: auto; /* Ensure scrolling is enabled for the entire page */
+  overflow: auto;
+  /* Ensure scrolling is enabled for the entire page */
 }
 
 #root {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  font-family: sans-serif;
 }
