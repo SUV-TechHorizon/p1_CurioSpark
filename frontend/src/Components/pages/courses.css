@@ -1,0 +1,10 @@
+.course-container {
+    flex: 1;
+    /* Allow sections to grow and fill available space */
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem 5%;
+    margin-bottom: 0;
+    /* Ensure no extra space */
+}

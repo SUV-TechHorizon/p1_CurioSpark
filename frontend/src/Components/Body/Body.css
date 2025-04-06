@@ -1,0 +1,435 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-x: hidden;
+  /* Prevent horizontal scrolling */
+}
+
+main {
+  padding: 2rem 5%;
+}
+
+section {
+  margin: 4rem 0;
+}
+
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.courses-grid-2 {
+  padding: 1rem;
+  text-align: center;
+
+}
+
+
+.courses-grid-button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.courses-grid-button:hover {
+  background: #2980b9;
+  text-decoration: none;
+}
+
+.course-card {
+  display: block;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1.5rem;
+}
+
+.course-content h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+}
+
+.btn {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.btn:hover {
+  background: #2980b9;
+}
+
+.about-content {
+  max-width: 1000px;
+  margin: 0 auto;
+  text-align: center;
+  line-height: 1.6;
+  padding: 20px;
+  /* Add some padding for better visibility */
+  background-color: white;
+  /* Ensure a visible background */
+  border-radius: 10px;
+  /* Optional: Add rounded corners */
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  /* Soft shadow effect */
+  font-weight: 500;
+}
+
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.testimonial-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-card img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px;
+  /* object-fit: cover; */
+}
+
+.testimonial-watch_Video_btn {
+  background-color: #c35157;
+  /* Button background color */
+  color: white;
+  /* Text color */
+  font-size: small;
+  /* Font size */
+  padding: 10px 20px;
+  /* Padding around the text */
+  border-radius: 8px;
+  /* Rounded corners */
+  border: none;
+  /* No border */
+  cursor: pointer;
+  /* Pointer cursor on hover */
+  transition: all 0.3s ease-in-out;
+  /* Smooth transition for hover effects */
+  font-family: Arial, sans-serif;
+  /* Font style */
+  text-transform: uppercase;
+  /* Uppercase text */
+  ;
+
+}
+
+.contact-container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.contact-form textarea {
+  height: 150px;
+  resize: vertical;
+}
+
+@media (max-width: 768px) {
+
+  .courses-grid,
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Add these new styles */
+.blog-section {
+  padding: 4rem 5%;
+}
+
+.blog-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.blog-post {
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.blog-post h3 {
+  padding: 1rem;
+  color: #2c3e50;
+}
+
+.blog-post p {
+  padding: 0 1rem 1rem;
+  color: #7f8c8d;
+}
+
+/* Add any additional styles you need for other sections */
+
+/* Add these new styles */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Ensure the main content takes full height */
+  box-sizing: border-box;
+}
+
+.section-wrapper {
+  flex: 1;
+  /* Allow sections to grow and fill available space */
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 2rem 5%;
+  margin-bottom: 0;
+  /* Ensure no extra space */
+  margin-top: 20px;
+}
+
+.single-section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.single-section-view {
+  background-color: #f8f9fa;
+}
+
+/* Update existing section styles */
+section {
+  margin: 1rem 0;
+  padding: 2rem 0;
+}
+
+.home-section {
+  width: 100%;
+}
+
+/* Adjust spacing for individual sections */
+.courses-section.single-section,
+.about-section.single-section,
+.blog-section.single-section,
+.testimonials-section.single-section,
+.contact-section.single-section {
+  padding: 3rem 0;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .main-content {
+    padding-top: 60px;
+    /* Adjust for mobile header height */
+  }
+
+  .section-wrapper {
+    padding: 1rem;
+  }
+
+  .single-section {
+    padding: 2rem 1rem;
+  }
+}
+
+.carousel {
+  position: relative;
+  /* Ensure it's not fixed */
+  width: 100%;
+  height: 600px;
+  overflow: hidden;
+  margin-bottom: 0px;
+  /* Add margin to separate from the next section */
+}
+
+.section {
+  padding: 50px 0;
+  /* Add padding to sections for spacing */
+}
+
+.courses-section {
+  display: block;
+  padding: 10px 50px 0 0;
+  /* Revert to the original padding */
+}
+
+.courses-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+}
+
+.course-card {
+  display: block;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.course-card:hover {
+  transform: translateY(-5px);
+}
+
+.course-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.course-content {
+  padding: 1.5rem;
+}
+
+.form-feedback {
+  margin-top: 1rem;
+  color: green;
+  font-weight: bold;
+  text-align: center;
+}
+
+footer {
+  margin: 0;
+  padding: 1rem 0;
+  background-color: #f8f9fa;
+  /* Ensure it matches the rest of the page */
+  text-align: center;
+}
+
+/* From Uiverse.io by elijahgummer */
+.button-with-icon {
+  overflow: hidden;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #d32f2f;
+  font-family: "Istok Web", sans-serif;
+  letter-spacing: 1px;
+  padding: 0 12px;
+  text-align: center;
+  width: 92px;
+  height: 30px;
+  font-size: 13px;
+  /* text-transform: uppercase; */
+  font-weight: normal;
+  border-radius: 3px;
+  outline: none;
+  user-select: none;
+  cursor: pointer;
+  transform: translateY(0px);
+  position: relative;
+  box-shadow:
+    inset 0 30px 30px -15px rgba(255, 255, 255, 0.1),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.3),
+    inset 0 1px 20px rgba(0, 0, 0, 0),
+    0 3px 0 #d32f2f,
+    0 3px 2px rgba(0, 0, 0, 0.2),
+    0 5px 10px rgba(0, 0, 0, 0.1),
+    0 10px 20px rgba(0, 0, 0, 0.1);
+  background: #e53935;
+  color: white;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3);
+  transition: 150ms all ease-in-out;
+}
+
+.button-with-icon .icon {
+  margin-right: 8px;
+  width: 24px;
+  height: 24px;
+  transition: all 0.5s ease-in-out;
+}
+
+.button-with-icon:active {
+  transform: translateY(3px);
+  box-shadow:
+    inset 0 16px 2px -15px rgba(0, 0, 0, 0),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.15),
+    inset 0 1px 20px rgba(0, 0, 0, 0.1),
+    0 0 0 #d32f2f,
+    0 0 0 2px rgba(255, 255, 255, 0.5),
+    0 0 0 rgba(0, 0, 0, 0),
+    0 0 0 rgba(0, 0, 0, 0);
+}
+
+.button-with-icon:hover .text {
+  transform: translateX(85px);
+}
+
+.button-with-icon:hover .icon {
+  transform: translate(27px);
+  scale: 1.5;
+}
+
+.text {
+  transition: all 0.5s ease-in-out;
+}

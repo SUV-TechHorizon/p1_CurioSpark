@@ -1,0 +1,89 @@
+{
+  "/home/temp/Documents/Projects/p1_CurioSpark/serverless.yml": {
+    "versionFramework": "4.6.4",
+    "servicePath": "/home/temp/Documents/Projects/p1_CurioSpark/serverless.yml",
+    "serviceConfigFileName": "serverless.yml",
+    "service": {
+      "service": "curiospark-backend",
+      "provider": {
+        "name": "aws",
+        "runtime": "nodejs18.x",
+        "region": "ap-south-1",
+        "environment": {
+          "EMAIL_USER": "${env:EMAIL_USER}",
+          "EMAIL_PASSWORD": "<REDACTED>",
+          "SPREADSHEET_ID": "${env:SPREADSHEET_ID}",
+          "SHEET_NAME": "${env:SHEET_NAME}"
+        }
+      },
+      "functions": {
+        "app": {
+          "handler": "backend/server.handler",
+          "events": [
+            {
+              "http": {
+                "path": "/{proxy+}",
+                "method": "ANY",
+                "cors": true
+              }
+            },
+            {
+              "http": {
+                "path": "/",
+                "method": "ANY",
+                "cors": true
+              }
+            }
+          ]
+        }
+      },
+      "plugins": [
+        "serverless-offline"
+      ],
+      "custom": {
+        "serverless-offline": {
+          "httpPort": 5001
+        }
+      }
+    },
+    "provider": {
+      "name": "aws",
+      "runtime": "nodejs18.x",
+      "region": "ap-south-1",
+      "environment": {
+        "EMAIL_USER": "${env:EMAIL_USER}",
+        "EMAIL_PASSWORD": "<REDACTED>",
+        "SPREADSHEET_ID": "${env:SPREADSHEET_ID}",
+        "SHEET_NAME": "${env:SHEET_NAME}"
+      }
+    },
+    "dashboard": {
+      "isEnabledForService": false,
+      "requiredAuthentication": false,
+      "orgFeaturesInUse": null,
+      "orgObservabilityIntegrations": null,
+      "serviceAppId": null,
+      "serviceProvider": null,
+      "instanceParameters": null
+    },
+    "error": {
+      "message": "Cannot resolve '${env:EMAIL_USER}' variable at 'provider.environment.EMAIL_USER'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.",
+      "stack": "Error: Cannot resolve '${env:EMAIL_USER}' variable at 'provider.environment.EMAIL_USER'. No value is available for this variable, and no default value was provided. Please check your variable definitions or provide a default value.\n    at _ResolverManager.resolve (file:///home/temp/.serverless/releases/4.6.4/package/dist/sf-core.js:1173:32559)\n    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)\n    at async #handlePlaceholderNode (file:///home/temp/.serverless/releases/4.6.4/package/dist/sf-core.js:1173:30766)\n    at async file:///home/temp/.serverless/releases/4.6.4/package/dist/sf-core.js:1173:28628\n    at async processNodeAndHandleCompletion (file:///home/temp/.serverless/releases/4.6.4/package/dist/sf-core.js:1173:17338)",
+      "code": "MISSING_VARIABLE_RESULT"
+    },
+    "serviceRawFile": "service: curiospark-backend\n\nprovider:\n  name: aws\n  runtime: nodejs18.x\n  region: ap-south-1 # or your preferred region\n  environment:\n    EMAIL_USER: ${env:EMAIL_USER}\n    EMAIL_PASSWORD: ${env:EMAIL_PASSWORD}\n    SPREADSHEET_ID: ${env:SPREADSHEET_ID}\n    SHEET_NAME: ${env:SHEET_NAME}\n\nfunctions:\n  app:\n    handler: backend/server.handler  \n    events:\n      - http:\n          path: /{proxy+}\n          method: ANY\n          cors: true\n      - http:\n          path: /\n          method: ANY\n          cors: true\n\nplugins:\n  - serverless-offline \n\ncustom:\n  serverless-offline:\n    httpPort: 5001 \n",
+    "command": [
+      "offline"
+    ],
+    "options": {},
+    "orgId": "a88b043c-7c39-4d8b-adc6-58bbc148c754",
+    "orgName": "ybhvdongre",
+    "userId": "rQCXR736DTjN9DcCxh",
+    "userName": "ybhvdongre",
+    "serviceProviderAwsCfStackId": null,
+    "serviceProviderAwsCfStackCreated": null,
+    "serviceProviderAwsCfStackUpdated": null,
+    "serviceProviderAwsCfStackStatus": null,
+    "serviceProviderAwsCfStackOutputs": null
+  }
+}

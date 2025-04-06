@@ -1,0 +1,23 @@
+[
+  {
+    "name": "Pooja Ghonge",
+    "imageUrl": "./pooja_.png",
+    "jobTitle": "ICIC Bank / Business Analyst/ 3.6 LPA",
+    "testimonial": "From learning to landing the dream job!",
+    "video_url": "https://www.instagram.com/curiospark_technologies/reel/DGnujzQNOef/"
+  },
+  {
+    "name": "Sudhanshu Nandurkar",
+    "imageUrl": "./sudanshu.png",
+    "jobTitle": "Tech Mahindra / Data Analyst / 3.5 LPA",
+    "testimonial": "From aspiring analyst to landing a role at Tech Mahindra!",
+    "video_url": "https://www.instagram.com/reel/DG7eAIkNvMo/?igsh=MWp0eDRueXQydzl3Zw=="
+  },
+  {
+    "name": "Rohit Dhongade",
+    "imageUrl": "./rohit.png",
+    "jobTitle": "Axis Bank / Data Scientist / 2.6 LPA",
+    "testimonial": "From learner to Data Scientist at Axis Bank!",
+    "video_url": "https://www.instagram.com/curiospark_technologies/reel/DHyMZ8Bz0T8/"
+  }
+] 
