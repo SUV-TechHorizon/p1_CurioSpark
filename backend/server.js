@@ -15,7 +15,9 @@ const healthRoutes = require('./routes/health');
 app.use('/api', apiRoutes);
 app.use('/health', healthRoutes);
 
-module.exports.handler = serverless(app);
+// module.exports.handler = serverless(app);
+module.exports = serverless(app);
+
 
 // For local development
 if (process.env.NODE_ENV !== 'production') {
