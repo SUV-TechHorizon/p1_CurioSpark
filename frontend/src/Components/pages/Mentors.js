@@ -333,7 +333,7 @@ const OurMentors = () => {
                         sx={{
                             bgcolor: "#e9e2da",
                             color: "#333",
-                            borderRadius: 4,
+                            borderRadius: 20,
                             boxShadow: "0 6px 18px rgba(68, 64, 64, 0.1)",
                             p: 4,
                             m: 2,

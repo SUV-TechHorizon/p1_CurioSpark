@@ -58,7 +58,7 @@ const Body = ({ activeSection }) => {
       case "home":
         return (
           <div className="home-section">
-            <section id="courses" className="courses-section">
+            {/* <section id="courses" className="courses-section">
               <h2>Our Courses</h2>
               <div className="courses-grid">
                 <div className="course-card">
@@ -67,7 +67,7 @@ const Body = ({ activeSection }) => {
                     alt="Web Development"
                   />
                   <div className="course-content">
-                    <h3>Web Development</h3>
+                    <h3>MERN Stack Development</h3>
                     <p>
                       Learn modern web development with React, Node.js, and
                       more.
@@ -105,7 +105,8 @@ const Body = ({ activeSection }) => {
                   Show more
                 </Link>
               </div>
-            </section>
+            </section> */}
+            <Courses />
 
             <section id="about" className="about-section">
               <h2>About Us</h2>
@@ -122,7 +123,7 @@ const Body = ({ activeSection }) => {
               </div>
             </section>
 
-            <section id="testimonials" className="testimonials-section">
+            {/* <section id="testimonials" className="testimonials-section">
               <h2>What Our Students Say</h2>
               <div className="testimonials-grid">
                 {testimonials.slice(0, 3).map((testimonial, index) => (
@@ -133,7 +134,8 @@ const Body = ({ activeSection }) => {
                   </div>
                 ))}
               </div>
-            </section>
+            </section> */}
+            <Testimonials />
           </div>
 
 

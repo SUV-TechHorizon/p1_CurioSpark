@@ -91,20 +91,20 @@ function Courses() {
 
     const courseList = [
         {
-            title: "Web Development",
-            description: "Learn modern web development with React, Node.js, and more.",
+            title: "MERN Stack Development",
+            description: "Become a full-stack developer with expertise in MongoDB, Express.js, React.js and Node.js. Ideal for aspiring web developers and software engineers.",
             imageUrl: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6",
             value: "mern"
         },
         {
             title: "Data Science",
-            description: "Master data analysis, machine learning, and statistics.",
+            description: "Master data analysis, machine learning, and visvalistion with industry-leading tools. Ideal for those looking to enter the data-driven world.",
             imageUrl: "https://images.unsplash.com/photo-1555949963-aa79dcee981c",
             value: "ds"
         },
         {
-            title: "Artificial Intelligence",
-            description: "Explore AI, deep learning, and neural networks.",
+            title: "Japanese Language",
+            description: "Master Japanese with a structured syllabus covering speaking, reading, writing and listening skill, Ideal for students, professionals and JLPT aspirants.",
             imageUrl: "https://images.unsplash.com/photo-1551434678-e076c223a692",
             value: "AI"
         }
